@@ -1,5 +1,6 @@
 package com.courses.microservices.controller;
 
+import com.courses.microservices.ExchangeValuesCache;
 import com.courses.microservices.model.ExchangeValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -22,7 +23,7 @@ public class CurrencyExchangeController
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public ExchangeValue retrieveExchangeValue( @PathVariable String from, @PathVariable String to )
 	{
-		ExchangeValue exchangeValue = new ExchangeValue( 1000L, from, to, 183 );
+		ExchangeValue exchangeValue = ExchangeValuesCache.filter(from,to);
 		exchangeValue.setPort( Integer.parseInt( environment.getProperty( "local.server.port" ) ) );
 		return exchangeValue;
 	}
