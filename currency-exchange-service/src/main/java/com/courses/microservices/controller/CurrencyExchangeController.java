@@ -1,6 +1,6 @@
 package com.courses.microservices.controller;
 
-import com.courses.microservices.ExchangeValuesCache;
+import com.courses.microservices.util.ExchangeValuesCache;
 import com.courses.microservices.model.ExchangeValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;

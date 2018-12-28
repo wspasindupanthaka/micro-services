@@ -1,4 +1,4 @@
-package com.courses.microservices;
+package com.courses.microservices.util;
 
 import com.courses.microservices.model.ExchangeValue;
 
