@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * com.courses.microservices.feign
  */
 
+//when using the below code line, no change has to be done in the other server
 //@FeignClient(name = "currency-exchange-service",url = "http://localhost:8000")
 @FeignClient(name = "currency-exchange-service")
 @RibbonClient(name = "currency-exchange-service")
