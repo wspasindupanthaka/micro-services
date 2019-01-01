@@ -14,10 +14,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 //when using the below code line, no change has to be done in the other server
 //@FeignClient(name = "currency-exchange-service",url = "http://localhost:8000")
-@FeignClient(name = "currency-exchange-service")
+
+//when not calling this service via api gateway server
+//@FeignClient(name = "currency-exchange-service")
+
+
+//when calling this service via api gateway server
+@FeignClient(name = "netflix-zuul-api-gateway-server")
+
 @RibbonClient(name = "currency-exchange-service")
 public interface CurrencyExchangeServiceProxy
 {
-	@GetMapping("/currency-exchange/from/{from}/to/{to}")
+	//when not calling this service via api gateway server
+//	@GetMapping("/currency-exchange/from/{from}/to/{to}")
+
+	//when calling this service via api gateway server
+	@GetMapping("/currency-exchange-service/currency-exchange/from/{from}/to/{to}")
 	public CurrencyConversionBean retrieveExchangeValue( @PathVariable(value = "from") String from, @PathVariable(value = "to") String to );
 }
