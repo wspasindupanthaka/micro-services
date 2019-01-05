@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 //when using the below code line, no change has to be done in the other server
 //@FeignClient(name = "currency-exchange-service",url = "http://localhost:8000")
 
-//when not calling this service via api gateway server
+//when not calling this service via api gateway server *here
 //@FeignClient(name = "currency-exchange-service")
 
 
